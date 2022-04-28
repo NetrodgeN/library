@@ -1,0 +1,50 @@
+.wrapper{
+  max-width: 1320px ;
+  margin: auto;
+}
+a{
+  text-decoration: none;
+  color: $color-header-nav;
+}
+
+
+//левая и правая колонка
+.container{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.footer__wrapper{
+  position: fixed;
+  bottom:0;
+  top:425.5px;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+  background: #2f364a;
+}
+
+
+
+.addBook__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.add__btn{
+  width: 160px;
+  height: 44px;
+  background:$color-btn-add-book ;
+  border: none;
+  border-radius: 3px;
+  color: $color-white;
+  cursor: pointer;
+  @extend %font-bold;
+  @include font(21px, 700, 0, bold)
+}

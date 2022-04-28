@@ -1,0 +1,38 @@
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 900px ;
+    background: #1f2635;
+    color: #6c758f;
+}
+.add__btn__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 114px;
+    border-bottom: 6px solid #19202e;
+}
+
+.add__btn{
+    width: 160px;
+    height: 44px;
+    background:#f2795a ;
+    border: none;
+    border-radius: 3px;
+    color: #ffff;
+    cursor: pointer;
+}
+
+.main__nav{
+
+}
+
+.categories{
+
+}
+
+.history{
+
+}
