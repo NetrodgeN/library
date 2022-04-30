@@ -3,6 +3,41 @@
   font-family: "Proxima Nova b", Verdana, sans-serif;
 }
 
+.rating {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rating__body {
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 0;
+}
+.rating__body .stars {
+  margin-bottom: 10px;
+  display: flex;
+}
+.rating__body .stars img {
+  display: block;
+  font-size: 14px;
+  margin: 2px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: color 0.5s;
+}
+.rating__body .stars img.star-rating-filled {
+  background: #ffab00;
+}
+.rating__body .stars img.star-rating-blank {
+  background: #ffffff;
+}
+
+.flex-container {
+  display: flex;
+}
+
 .wrapper {
   max-width: 1320px;
   margin: auto;
@@ -163,12 +198,10 @@ label {
 
 .books__container {
   display: flex;
-  justify-content: center;
-  align-content: center;
   width: 1120px;
-  /*height: 780px;*/
+  height: 780px;
   flex-wrap: wrap;
-  gap: 10px;
+  overflow-y: scroll;
 }
 
 /*# sourceMappingURL=style.css.map */

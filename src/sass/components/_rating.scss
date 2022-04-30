@@ -1,0 +1,42 @@
+
+.rating{
+  display: flex;
+  align-items: flex-end;
+
+}
+.rating__body{
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 0;
+
+  .stars{
+    margin-bottom: 10px;
+    display: flex;
+    img{
+      display: block;
+      font-size:14px;
+      margin: 2px;
+      cursor: pointer;
+      background: $color-white;
+
+      transition: color 0.5s;
+      &.star-rating-filled {
+        background: $color-star;
+      }
+      &.star-rating-blank {
+        background: $color-white;
+      }
+
+    }
+  }
+}
+
+
+
+
+
+.flex-container {
+  display: flex;
+}

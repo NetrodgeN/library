@@ -1,6 +1,7 @@
 .book__card{
     width: 200px;
     height: 350px;
+    padding: 30px 0 0 20px
 }
 
 .book__cover{
