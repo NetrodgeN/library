@@ -1,0 +1,43 @@
+.column{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 900px ;
+  background: #1f2635;
+  color: #6c758f;
+}
+.add__btn__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 114px;
+  border-bottom: 6px solid #19202e;
+}
+
+.add__btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 160px;
+  height: 44px;
+  background:$color-btn-add-book ;
+  border: none;
+  border-radius: 3px;
+  color: $color-white;
+  cursor: pointer;
+    @extend %font-bold;
+    @include font(1.4rem, 700, 0, bold)
+}
+
+.main__nav{
+
+}
+
+.categories{
+
+}
+
+.history{
+
+}

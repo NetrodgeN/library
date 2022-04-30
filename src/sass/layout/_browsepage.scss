@@ -10,7 +10,6 @@
   border-bottom: 1px solid #dadfea;
 }
 .title{
-  color:#444c63 ;
   padding-left: 20px;
   margin:0;
 }
@@ -30,7 +29,7 @@
   padding-left: 20px;
 }
 .filter__btn{
-  padding-right: 8px;
+  padding-right: 24px;
 }
 .filter__input{
   appearance: none;
@@ -38,13 +37,14 @@
     & + label{
       background: $color-input-cheked;
       color: $color-white;
-      padding: 3px 8px;
+      padding: 4px 10px;
     }
   }
 }
 
 .filter__name{
-  font-size:12px;
+  font-size:1.2rem;
+  cursor: pointer;
 }
 
 label {
@@ -57,7 +57,25 @@ label {
 
 .container__input{
   padding-right: 20px;
+  position:relative;
 }
+
+.search__loupe{
+  position:absolute;
+  height: 16px;
+  width: 16px;
+  background: inherit;
+  cursor: pointer;
+  top: 9px;
+  right: 34px;
+}
+
+.svg-icon {
+  fill: $color-input-text;
+}
+
+
+
 
 .books__container{
   display: flex;
@@ -65,4 +83,17 @@ label {
   height: 780px;
   flex-wrap: wrap;
   overflow-y: scroll;
+  &::-webkit-scrollbar-thumb {
+    height: 301px;
+  }
+}
+.book__title{
+  font-size: 1.6rem;
+  margin-top: 9px;
+  color:$color-book-name;
+}
+.book__author{
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color:$color-author-name;
 }

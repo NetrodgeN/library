@@ -4,6 +4,8 @@
 @import "sass/abstracts/placeholder";
 @import "sass/abstracts/mixin";
 
+@import "sass/base/base";
+
 @import "sass/components/rating";
 
 
@@ -11,4 +13,5 @@
 @import "App";
 
 @import "sass/layout/header";
+@import "sass/layout/column";
 @import "sass/layout/browsepage";

@@ -37,14 +37,14 @@ a{
 
 }
 
-.add__btn{
-  width: 160px;
-  height: 44px;
-  background:$color-btn-add-book ;
-  border: none;
-  border-radius: 3px;
-  color: $color-white;
-  cursor: pointer;
-  @extend %font-bold;
-  @include font(21px, 700, 0, bold)
-}
+//.add__btn{
+//  width: 160px;
+//  height: 44px;
+//  background:$color-btn-add-book ;
+//  border: none;
+//  border-radius: 3px;
+//  color: $color-white;
+//  cursor: pointer;
+//  @extend %font-bold;
+//  @include font(21px, 700, 0, bold)
+//}

@@ -5,6 +5,7 @@ import BooksFilter from "./BooksFilter";
 import Column from "./Column/Column";
 import {useDispatch} from "react-redux";
 import {fetchBook} from "../store/action-creator/book";
+import useDebounce from "../hooks/useDebounce";
 
 interface IFilter{
     sort:string;
@@ -16,23 +17,22 @@ const BrowseBooks: React.FC = () => {
     const {books} = useTypeSelector(state => state.book)
     const [filter, setFilter] = useState<IFilter>({sort:'', query:''})
 
+
+
     const dispatch = useDispatch()
 
     useEffect(()=>{
         dispatch(fetchBook())
     },[])
 
-
-
+//сортировка по ..
     const sortedBooks = useMemo(()=>{
-        console.log('hook')
         if(filter.sort){
             return [...books].sort((a , b )=> b[filter.sort] - a[filter.sort])
         }
-
         return books;
     },[filter.sort, books])
-
+//фильтрация и сортировка
     const sortedAndSearchedBooks = useMemo(()=>{
         return sortedBooks.filter(book =>
             book.title.toLowerCase().includes(filter.query.toLowerCase()) ||
@@ -40,15 +40,13 @@ const BrowseBooks: React.FC = () => {
             book.author.firstName.toLowerCase().includes(filter.query.toLowerCase()) )
     },[filter.query, sortedBooks])
 
-
-
     return (
         <div className='container'>
             <Column/>
 
             <div className="container__browse">
                 <div className='title__container'>
-                    <h2 className='title'>Browse Available Books</h2>
+                    <h1 className='title'>Browse Available Books</h1>
                 </div>
                 <BooksFilter filter={filter} setFilter={setFilter}/>
                 <BookList

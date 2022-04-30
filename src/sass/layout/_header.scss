@@ -14,6 +14,7 @@
   color: $color-white;
 }
 .navigation__link{
+  font-size: 1.3rem;
   padding-right: 25px;
   &:first-child{
     list-style-type:none;
@@ -22,6 +23,8 @@
     color:$color-header-point;
   }
 }
+
+
 .user__header{
   display: flex;
   justify-content: space-around ;
@@ -30,11 +33,16 @@
   align-items: center;
   color: $color-white;
 }
+
+.username__header{
+  font-size: 1.3rem;
+}
+
 .avatar__wrapper{
   border: 1px solid $color-white;
   border-radius: 50%;
-  width: 33px;
-  height: 33px;
+  width: 28px;
+  height: 28px;
   background-color:$color-activity;
 
 }

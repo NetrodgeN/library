@@ -27,9 +27,9 @@ const BookList: FC<BookListProps> = ({sortedAndSearchedBooks}) => {
             {sortedAndSearchedBooks.map(book =>
                 <div className={classes.book__card} key={book.id}>
                     <img className={classes.book__cover} src={book.image_url} alt="logo"/>
-                    <div>{book.title}</div>
-                    <div>by {book.author.firstName} {book.author.lastName}</div>
-                    <Rating props={book.rating}/>
+                    <p className='book__title'>{book.title}</p>
+                    <p className="book__author">by {book.author.firstName} {book.author.lastName}</p>
+                    <Rating rating={book.rating}/>
                 </div>
             )}
         </div>

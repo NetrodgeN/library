@@ -28,7 +28,7 @@ const BookForm:FC<IBookFormProps> = ({setModal}) => {
     })
 
     return (
-        <form className={"addBook__form"}>
+        <form name="add__book" className={"addBook__form"}>
             <Input
                 value={addBook.title}
                 placeholder='Book name'

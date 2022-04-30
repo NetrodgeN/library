@@ -21,7 +21,6 @@ const Star: FC<IstarProps> = ({starId, rating, onMouseEnter, onMouseLeave, onCli
              onClick={onClick}
         >
             <img
-                height="16px"
                 className={styleClass}
                 src={starImg}
                 alt="star"
@@ -32,21 +31,22 @@ const Star: FC<IstarProps> = ({starId, rating, onMouseEnter, onMouseLeave, onCli
 
 
 interface IRatingProps{
-    props:number;
+    rating:number;
 }
 
 const Rating: FC<IRatingProps> = (props) => {
-    const [selectedRate, setSelectedRate] = useState<null|number>(props.props)
+    const [selectedRate, setSelectedRate] = useState<null|number>(props.rating)
     const [hoveredRate, setHoveredRate] = useState<null|number>(null)
     const stars =[1,2,3,4,5]
 
     return (
         <div className='rating__body'>
             <div className="stars">
-                {stars.map((star) =>
-                    <div>
+                {stars.map((star,index) =>
+                    <div
+                        key ={index}>
                     <Star
-                        key ={star}
+
                         rating={hoveredRate || selectedRate}
                         onMouseLeave={()=> setHoveredRate(0)}
                         onMouseEnter={()=>setHoveredRate(star)}

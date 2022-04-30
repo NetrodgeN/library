@@ -6,8 +6,8 @@ const Header:React.FC = () => {
             <div className="wrapper header__wrapper">
                 <nav className='header__navigation'>
                     <ul className='header__list'>
-                        <li className='navigation__link'><a href="#">Help Center</a></li>
-                        <li className='navigation__link'><a href="#">Our Support</a></li>
+                        <li className='navigation__link'><a href="#" className='navigation__title'>Help Center</a></li>
+                        <li className='navigation__link'><a href="#" className='navigation__title'>Our Support</a></li>
                     </ul>
                 </nav>
                 <div className="user__header">
@@ -15,7 +15,7 @@ const Header:React.FC = () => {
                         {/*<img src="" alt=""/>*/}
                     </div>
 
-                    <p>John Doe</p>
+                    <p className="username__header">John Doe</p>
                     <p>&#9660;</p>
                 </div>
             </div>
