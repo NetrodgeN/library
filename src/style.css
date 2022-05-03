@@ -189,6 +189,11 @@ a {
   font-style: bold;
 }
 
+.history {
+  text-align: center;
+  color: white;
+}
+
 .container__browse {
   display: flex;
   flex-direction: column;

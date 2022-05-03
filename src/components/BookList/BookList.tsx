@@ -29,7 +29,7 @@ const BookList: FC<BookListProps> = ({sortedAndSearchedBooks}) => {
                     <img className={classes.book__cover} src={book.image_url} alt="logo"/>
                     <p className='book__title'>{book.title}</p>
                     <p className="book__author">by {book.author.firstName} {book.author.lastName}</p>
-                    <Rating rating={book.rating}/>
+                    <Rating book={book}/>
                 </div>
             )}
         </div>

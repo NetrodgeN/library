@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Modal from "../UI/Modal/Modal";
 import BookForm from "../BookForm";
+import History from "../History/History";
 
 const Column:React.FC  = () => {
     const [modal, setModal] = useState<boolean>(false)
@@ -35,10 +36,7 @@ const Column:React.FC  = () => {
             </ul>
 
             <div className={"history"}>
-                <p> blablabla bal bla ballbalblabl balblablabl</p>
-                <p>23 minutes ago</p>
-                <p> blablabla bal bla ballbalblabl balblablabl</p>
-                <p>23 minutes ago</p>
+                <History/>
             </div>
         </div>
     );
