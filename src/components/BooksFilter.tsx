@@ -1,6 +1,8 @@
-import React, {FC, useCallback, useEffect} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import Input from "./UI/Input/Input";
 import FilterButton from "./FilterButton/FilterButton";
+import useDebounce from "../hooks/useDebounce";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface IFilter{
     sort:string;
@@ -15,28 +17,42 @@ interface BooksFilterProps{
 
 const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
 
-    // const debounce = (fn, ms = 300)=>{
-    //     let timeout;
-    //     return function (){
-    //         let self = this;
-    //         let args = arguments;
-    //         const fnCall = () =>{fn.apply(self, args)}
-    //         clearTimeout(timeout);
-    //         timeout = setTimeout(fnCall, ms)
-    //
-    //     }
+    // const [typingTimeout, setTypingTimeout]=useState('')
+
+    // function handleInput(e){
+    //     const text = (e.target as HTMLInputElement).value
+    //     clearTimeout(typingTimeout);
+    //     const timeout = setTimeout(()=>{
+    //         setFilter({...filter, query: text })
+    //     }, 1000)
+    // setTypingTimeout(timeout)
     // }
-    //
-    //
-    // oNChange = debounce(oNChange)
+    const [newLocalSearch, setNewLocalSearch] = useLocalStorage([], 'newSearch')
+
+
+
+
+
+    const debounce = useDebounce();
+    function handleInput(e){
+        e.preventDefault()
+        const newSearch ={
+            title:e.target.value,
+            dateCreate: Date.now()
+        }
+        const text = (e.target as HTMLInputElement).value
+        debounce(()=>setFilter({...filter, query: text }), 1000)
+        debounce(()=>setNewLocalSearch([...newLocalSearch, newSearch]), 1000)
+    }
+
 
     return (
         <div className='filter__browse'>
             <div>
-                <form className="container__input">
+                <form className="container__input" onSubmit={event=> event.preventDefault()}>
                 <Input
-                    value={filter.query}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFilter({...filter, query: (e.target as HTMLInputElement).value})}
+
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInput(e)}
                     placeholder={'Enter Keywords'}/>
                     <svg className="svg-icon search__loupe" viewBox="0 0 20 20">
                         <path

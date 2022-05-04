@@ -5,7 +5,6 @@ import BooksFilter from "./BooksFilter";
 import Column from "./Column/Column";
 import {useDispatch} from "react-redux";
 import {fetchBook} from "../store/action-creator/book";
-import useDebounce from "../hooks/useDebounce";
 
 interface IFilter{
     sort:string;
@@ -16,8 +15,6 @@ const BrowseBooks: React.FC = () => {
 
     const {books} = useTypeSelector(state => state.book)
     const [filter, setFilter] = useState<IFilter>({sort:'', query:''})
-
-
 
     const dispatch = useDispatch()
 
@@ -32,7 +29,7 @@ const BrowseBooks: React.FC = () => {
         }
         return books;
     },[filter.sort, books])
-//фильтрация и сортировка
+//фильтрация и поиск
     const sortedAndSearchedBooks = useMemo(()=>{
         return sortedBooks.filter(book =>
             book.title.toLowerCase().includes(filter.query.toLowerCase()) ||
