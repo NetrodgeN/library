@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 interface FilterButtonInterface{
     options: IOptions[];
@@ -12,6 +13,18 @@ interface IOptions{
 }
 
 const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
+    const [newLocalFilter, setNewLocalFilter] = useLocalStorage([], 'newFilter')
+
+    const handlerChange=(event, onClick, option)=>{
+        onClick((event.target as HTMLTextAreaElement).value)
+        const localFilter={
+            title:option.name,
+            dateCreate: Date.now()
+        }
+        setNewLocalFilter([...newLocalFilter, localFilter])
+    }
+
+
 
     return (
         <div className='buttons__container'>
@@ -26,7 +39,9 @@ const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
                         id={option.value}
                         value={option.value}
                         onClick={event =>
-                            onClick((event.target as HTMLTextAreaElement).value)}
+                            handlerChange(event, onClick, option)
+                            // onClick((event.target as HTMLTextAreaElement).value)
+                    }
                    />
                     <label htmlFor={option.value}
                     >

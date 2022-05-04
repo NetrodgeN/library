@@ -1,6 +1,7 @@
 import React from 'react';
 import HistoryAddBook from "./HistoryAddBook";
 import HistoryAddRating from "./HistoryAddRating";
+import HistoryFilter from "./HistoryFilter";
 
 
 const History = () => {
@@ -10,6 +11,7 @@ const History = () => {
         <div className={''}>
             <HistoryAddBook/>
             <HistoryAddRating/>
+            <HistoryFilter/>
         </div>
     );
 };
