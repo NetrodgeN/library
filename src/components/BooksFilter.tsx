@@ -29,10 +29,6 @@ const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
     // }
     const [newLocalSearch, setNewLocalSearch] = useLocalStorage([], 'newSearch')
 
-
-
-
-
     const debounce = useDebounce();
     function handleInput(e){
         e.preventDefault()
@@ -69,7 +65,7 @@ const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
                     {value: 'updatedAt', name: 'Most Recent', active: false},
                     {value: 'rating', name: 'Most Popular', active: false},
                     {value: 'cost', name: 'Free Books', active: false},
-                    ]}
+                        ]}
                 />
             </div>
         </div>

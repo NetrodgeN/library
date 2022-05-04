@@ -24,9 +24,11 @@ const BrowseBooks: React.FC = () => {
 
 //сортировка по ..
     const sortedBooks = useMemo(()=>{
-        if(filter.sort){
-            return [...books].sort((a , b )=> b[filter.sort] - a[filter.sort])
-        }
+    if(filter.sort == 'rating' || filter.sort == 'createdAt' || filter.sort == 'updatedAt') {
+        return [...books].sort((a, b) => b[filter.sort] - a[filter.sort])
+    } else if( filter.sort === 'cost') {
+        return [...books].filter(a => a[filter.sort] == 0)
+    }
         return books;
     },[filter.sort, books])
 //фильтрация и поиск
