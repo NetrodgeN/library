@@ -9,7 +9,7 @@ interface IBookFormProps{
 }
 
 const BookForm:FC<IBookFormProps> = ({setModal}) => {
-    const [newLocalBook, setNewLocalBook] = useLocalStorage([], 'newBook')
+    const [newLocalBook, setNewLocalBook] = useLocalStorage<object[]>([], 'newBook')
     const [addBook, setAddBook] = useState({title:'',  author:{lastName:'', firstName:''}});
     const dispatch = useDispatch()
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import {IBook} from "../../types/book";
 import timeConversion from "./DateAgo";
+import {IBookRating} from "./HistoryAddRating";
 
 const HistorySearch = () => {
     let newSearch;
@@ -17,11 +17,11 @@ const HistorySearch = () => {
 
     return (
         <div className={'kkkkkk'}>
-            {newSearch.slice(-1).map((element:IBook)=>
-                <div key={element.dateCreate}
+            {newSearch.slice(-1).map((element:IBookRating)=>
+                <div key={element.updateAt}
                      style={{textAlign: 'center'}}>
                     <p>Последний поиск:  {element.title}</p>
-                    <p>{timeConversion((now - element.dateCreate))} назад</p>
+                    <p>{timeConversion((now - element.updateAt))} назад</p>
                 </div>
             )}
         </div>

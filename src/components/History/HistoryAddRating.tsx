@@ -2,6 +2,10 @@ import React from 'react';
 import {IBook} from "../../types/book";
 import timeConversion from "./DateAgo";
 
+ export interface IBookRating extends IBook{
+    updateAt:number;
+}
+
 const HistoryAddRating = () => {
 
     let newRating;
@@ -18,7 +22,7 @@ const HistoryAddRating = () => {
 
     return (
         <div className={'RATING'}>
-            {newRating.slice(-1).map((element)=>
+            {newRating.slice(-1).map((element: IBookRating)=>
                 <div key={element.id}>
 
                      <p>Вы изменили рейтинг {element.title}</p>

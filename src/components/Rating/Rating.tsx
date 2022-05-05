@@ -41,11 +41,11 @@ interface IRatingProps{
 const Rating: FC<IRatingProps> = (props) => {
     const [selectedRate, setSelectedRate] = useState<null|number>(props.book.rating) // изменить состояние на актуальное
     const [hoveredRate, setHoveredRate] = useState<null|number>(null)
-    const [newLocalRating, setNewLocalRating] = useLocalStorage([], 'newRating')
+    const [newLocalRating, setNewLocalRating] = useLocalStorage<object[]>([], 'newRating')
 
     const stars =[1,2,3,4,5]
 
-    function newRating(star) {
+    function newRating(star:number) {
         const newBook={
         ...props.book,
             updateAt: Date.now(),

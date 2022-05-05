@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import Input from "./UI/Input/Input";
 import FilterButton from "./FilterButton/FilterButton";
 import useDebounce from "../hooks/useDebounce";
@@ -27,14 +27,14 @@ const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
     //     }, 1000)
     // setTypingTimeout(timeout)
     // }
-    const [newLocalSearch, setNewLocalSearch] = useLocalStorage([], 'newSearch')
+    const [newLocalSearch, setNewLocalSearch] = useLocalStorage<object[]>([], 'newSearch')
 
     const debounce = useDebounce();
-    function handleInput(e){
+    function handleInput(e: React.ChangeEvent<HTMLInputElement>){
         e.preventDefault()
         const newSearch ={
             title:e.target.value,
-            dateCreate: Date.now()
+            updateAt: Date.now()
         }
         const text = (e.target as HTMLInputElement).value
         debounce(()=>setFilter({...filter, query: text }), 1000)
@@ -47,7 +47,6 @@ const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
             <div>
                 <form className="container__input" onSubmit={event=> event.preventDefault()}>
                 <Input
-
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInput(e)}
                     placeholder={'Enter Keywords'}/>
                     <svg className="svg-icon search__loupe" viewBox="0 0 20 20">

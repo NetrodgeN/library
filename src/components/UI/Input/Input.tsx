@@ -3,7 +3,7 @@ import classes from './Input.module.css'
 
 interface InputProps{
     onChange: any;
-    value:string;
+    value?:string;
     placeholder:string;
 }
 

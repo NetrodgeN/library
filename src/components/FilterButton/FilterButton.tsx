@@ -13,13 +13,18 @@ interface IOptions{
 }
 
 const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
-    const [newLocalFilter, setNewLocalFilter] = useLocalStorage([], 'newFilter')
+    const [newLocalFilter, setNewLocalFilter] = useLocalStorage<object[]>([], 'newFilter')
 
-    const handlerChange=(event, onClick, option)=>{
+
+
+    const handlerChange=(
+        event:React.MouseEvent<HTMLInputElement, MouseEvent>,
+        onClick:(value: string) => {},
+        option:IOptions)=>{
         onClick((event.target as HTMLTextAreaElement).value)
         const localFilter={
             title:option.name,
-            dateCreate: Date.now()
+            updateAt: Date.now()
         }
         setNewLocalFilter([...newLocalFilter, localFilter])
     }
