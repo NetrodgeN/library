@@ -40,7 +40,6 @@ const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
                         value={option.value}
                         onClick={event =>
                             handlerChange(event, onClick, option)
-                            // onClick((event.target as HTMLTextAreaElement).value)
                     }
                    />
                     <label htmlFor={option.value}
