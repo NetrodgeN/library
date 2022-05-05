@@ -9,21 +9,6 @@ html {
   color: #737d98;
 }
 
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: inherit;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 350px;
-  background: #ccd5e4;
-  border-radius: 13px;
-  border: 7px solid #ffffff;
-}
-
 h1 {
   font-size: 2.2rem;
   font-weight: normal;
@@ -189,9 +174,100 @@ a {
   font-style: bold;
 }
 
+.main__nav__btns {
+  margin: 0;
+  height: 240px;
+  padding: 0;
+  border-bottom: 6px solid #19202e;
+}
+
+.nav__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+  font-size: 1.3rem;
+  color: #78829d;
+  height: 38px;
+  padding-left: 20px;
+}
+.nav__title:active {
+  color: #ffffff;
+  background: #15a4fa;
+}
+
+.categories {
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 182px;
+  border-bottom: 6px solid #19202e;
+  font-size: 1.3rem;
+}
+.categories .cat__title {
+  height: 36px;
+}
+.categories .cat__title::marker {
+  font-size: 2.1rem;
+}
+.categories .must_read::marker {
+  color: #e64c66;
+}
+.categories .best_of_list::marker {
+  color: #ffab00;
+}
+.categories .classic_novels::marker {
+  color: #00bfdd;
+}
+.categories .non_fiction::marker {
+  color: #7874cf;
+}
+
+.history_element__container {
+  padding-top: 10px;
+}
+
+.history_container {
+  padding: 0 20px;
+}
+
 .history {
-  text-align: center;
   color: white;
+  overflow-y: scroll;
+}
+.history::-webkit-scrollbar {
+  width: 20px;
+}
+.history::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+.history::-webkit-scrollbar-thumb {
+  background: #ccd5e4;
+  border-radius: 13px;
+  border: 7px solid #1f2637;
+}
+
+.icon__block {
+  display: block;
+  padding: 10px 10px 0 0;
+}
+
+.container_history__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.history__element {
+  font-size: 1.2rem;
+  color: #6f7d95;
+  display: flex;
+  height: 80px;
+}
+
+.light__color {
+  color: #97b3ce;
 }
 
 .container__browse {
@@ -280,8 +356,17 @@ label {
   flex-wrap: wrap;
   overflow-y: scroll;
 }
+.books__container::-webkit-scrollbar {
+  width: 20px;
+}
+.books__container::-webkit-scrollbar-track {
+  background-color: inherit;
+}
 .books__container::-webkit-scrollbar-thumb {
-  height: 301px;
+  height: 350px;
+  background: #ccd5e4;
+  border-radius: 13px;
+  border: 7px solid #ffffff;
 }
 
 .book__title {
@@ -294,6 +379,17 @@ label {
   font-size: 1.2rem;
   margin-top: 5px;
   color: #8792a5;
+}
+
+.book__card {
+  width: 200px;
+  height: 350px;
+  padding: 30px 0 0 20px;
+}
+
+.book__cover {
+  width: 200px;
+  height: 275px;
 }
 
 /*# sourceMappingURL=style.css.map */

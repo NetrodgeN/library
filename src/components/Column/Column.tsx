@@ -18,21 +18,21 @@ const Column:React.FC  = () => {
                 </Modal>
             </div>
             <nav className={"main__nav"}>
-                <ul>
-                    <li>Now Reading</li>
-                    <li>Browse</li>
-                    <li>Buy Books</li>
-                    <li>Favourite Books</li>
-                    <li>Wishlist</li>
-                    <li>History</li>
+                <ul className={'main__nav__btns'}>
+                    <li className={'nav__title'}><i className="fa-solid fa-book"/> Now Reading</li>
+                    <li className={'nav__title'}><i className="fa-solid fa-earth-africa"/> Browse</li>
+                    <li className={'nav__title'}><i className="fa-solid fa-cart-shopping"/> Buy Books</li>
+                    <li className={'nav__title'}><i className="fa-solid fa-star"/> Favourite Books</li>
+                    <li className={'nav__title'}><i className="fa-solid fa-list"/> Wishlist</li>
+                    <li className={'nav__title'}><i className="fa-regular fa-clock"/> History</li>
                 </ul>
             </nav>
 
             <ul className={"categories"}>
-                <li>Must Read Titles</li>
-                <li>Best Of List</li>
-                <li>Classic Novels</li>
-                <li>Non Fiction</li>
+                <li className={'must_read cat__title'}>Must Read Titles</li>
+                <li className={'best_of_list cat__title'}>Best Of List</li>
+                <li className={'classic_novels cat__title'}>Classic Novels</li>
+                <li className={'non_fiction cat__title'}>Non Fiction</li>
             </ul>
 
             <div className={"history"}>

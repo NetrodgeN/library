@@ -7,9 +7,8 @@ import HistorySearch from "./HistorySearch";
 
 const History = () => {
 
-
     return (
-        <div className={''}>
+        <div className={'history_container'}>
             <HistoryAddBook/>
             <HistoryAddRating/>
             <HistoryFilter/>

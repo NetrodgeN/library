@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {useTypeSelector} from "../hooks/useTypeSelector";
-import BookList from "./BookList/BookList";
+import BookList from "./BookList";
 import BooksFilter from "./BooksFilter";
 import Column from "./Column/Column";
 import {useDispatch} from "react-redux";
