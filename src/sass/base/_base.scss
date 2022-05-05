@@ -4,10 +4,23 @@ html{
   color: $color-main-text;
 
 }
-
+a{
+  text-decoration: none;
+  color: $color-header-nav;
+}
 h1{
   @include font(2.2rem, normal, normal)
 }
 p{
   margin: 0;
+}
+.wrapper{
+  max-width: 1320px ;
+  margin: auto;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }

@@ -1,0 +1,27 @@
+
+.footer__wrapper{
+
+  //position: fixed;
+  //bottom:0;
+  //top:425.5px;
+  //right: 0;
+  //left: 0;
+  //display: flex;
+  //justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+  background: $color-footer;
+}
+.button__footer{
+  background: $color-activity;
+  border: none;
+  height: 45px;
+  width: 55px;
+  cursor: pointer;
+  color: $color-white;
+}
+.question{
+  background: $color-footer-help;
+}
+

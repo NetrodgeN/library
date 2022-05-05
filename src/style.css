@@ -9,6 +9,11 @@ html {
   color: #737d98;
 }
 
+a {
+  text-decoration: none;
+  color: #6c758f;
+}
+
 h1 {
   font-size: 2.2rem;
   font-weight: normal;
@@ -18,6 +23,17 @@ h1 {
 
 p {
   margin: 0;
+}
+
+.wrapper {
+  max-width: 1320px;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .rating {
@@ -52,41 +68,6 @@ p {
 
 .flex-container {
   display: flex;
-}
-
-.wrapper {
-  max-width: 1320px;
-  margin: auto;
-}
-
-a {
-  text-decoration: none;
-  color: #6c758f;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.footer__wrapper {
-  position: fixed;
-  bottom: 0;
-  top: 425.5px;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-end;
-  height: 45px;
-  background: #2f364a;
-}
-
-.addBook__form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
 }
 
 .header__wrapper {
@@ -270,6 +251,13 @@ a {
   color: #97b3ce;
 }
 
+.addBook__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
 .container__browse {
   display: flex;
   flex-direction: column;
@@ -352,7 +340,7 @@ label {
 .books__container {
   display: flex;
   width: 1120px;
-  height: 780px;
+  height: 776px;
   flex-wrap: wrap;
   overflow-y: scroll;
 }
@@ -390,6 +378,26 @@ label {
 .book__cover {
   width: 200px;
   height: 275px;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  height: 45px;
+  background: #181e2c;
+}
+
+.button__footer {
+  background: #15a4fa;
+  border: none;
+  height: 45px;
+  width: 55px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.question {
+  background: #1f2637;
 }
 
 /*# sourceMappingURL=style.css.map */
