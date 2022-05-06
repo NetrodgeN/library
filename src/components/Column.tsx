@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Modal from "../UI/Modal/Modal";
-import BookForm from "../BookForm";
-import History from "../History/History";
+import Modal from "./UI/Modal/Modal";
+import BookForm from "./BookForm";
+import History from "./History/History";
 
 const Column:React.FC  = () => {
     const [modal, setModal] = useState<boolean>(false)

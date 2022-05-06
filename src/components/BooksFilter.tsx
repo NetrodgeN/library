@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Input from "./UI/Input/Input";
-import FilterButton from "./FilterButton/FilterButton";
+import FilterButton from "./FilterButton";
 import useDebounce from "../hooks/useDebounce";
 import useLocalStorage from "../hooks/useLocalStorage";
 
@@ -17,16 +17,6 @@ interface BooksFilterProps{
 
 const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
 
-    // const [typingTimeout, setTypingTimeout]=useState('')
-
-    // function handleInput(e){
-    //     const text = (e.target as HTMLInputElement).value
-    //     clearTimeout(typingTimeout);
-    //     const timeout = setTimeout(()=>{
-    //         setFilter({...filter, query: text })
-    //     }, 1000)
-    // setTypingTimeout(timeout)
-    // }
     const [newLocalSearch, setNewLocalSearch] = useLocalStorage<object[]>([], 'newSearch')
 
     const debounce = useDebounce();

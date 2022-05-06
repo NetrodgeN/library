@@ -13,7 +13,7 @@ const HistoryAddRating = () => {
         newRating = JSON.parse(localStorage.newRating)
     }
     catch (e){
-        console.log( 'ошибка ' +  e )
+        console.log('ошибка ' + e);
     }
     if(newRating== undefined){
         return <h2/>

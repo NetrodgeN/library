@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import useLocalStorage from "../../hooks/useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface FilterButtonInterface{
     options: IOptions[];
