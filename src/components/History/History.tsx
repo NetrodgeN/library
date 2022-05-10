@@ -19,12 +19,6 @@ const History = () => {
     console.log(history)
     return (
         <div className={'history_container'}>
-            {/*{history.map((a)=>{*/}
-
-            {/*    <div{a.author}>123</div>*/}
-            {/*})*/}
-
-            {/*}*/}
             <HistoryAddBook/>
             <HistoryAddRating/>
             <HistoryFilter/>

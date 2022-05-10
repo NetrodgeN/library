@@ -1,5 +1,5 @@
 import React from 'react';
-import timeConversion from './DateAgo'
+import timeConversion from './timeConversion'
 import {useTypeSelector} from "../../hooks/useTypeSelector";
 
 const HistoryAddBook = () => {
@@ -23,7 +23,6 @@ const HistoryAddBook = () => {
                     </div>
                 </div>
             )}
-
         </div>
     );
 };

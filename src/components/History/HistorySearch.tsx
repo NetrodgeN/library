@@ -1,13 +1,9 @@
 import React from 'react';
-import timeConversion from "./DateAgo";
+import timeConversion from "./timeConversion";
 import {useTypeSelector} from "../../hooks/useTypeSelector";
 
 const HistorySearch = () => {
     const historySearch = useTypeSelector(state => state.history.addSearch)
-
-    // if(historySearch.dateChange == undefined || historySearch.title === ""){
-    //     return <h2/>
-    // }
     let now = Date.now();
 
     return (
