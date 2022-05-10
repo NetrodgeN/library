@@ -1,6 +1,7 @@
 import React, {useState, FC} from 'react';
 import starImg from './star.png'
-import useLocalStorage from "../../hooks/useLocalStorage";
+import {useDispatch} from "react-redux";
+import {HistoryActionTypes} from "../../types/history";
 
 interface IstarProps{
     star:number;
@@ -41,9 +42,11 @@ interface IRatingProps{
 const stars =[1,2,3,4,5]
 
 const Rating: FC<IRatingProps> = (props) => {
-    const [selectedRate, setSelectedRate] = useState<null|number>(props.book.rating) // изменить состояние на актуальное
+    const [selectedRate, setSelectedRate] = useState<null|number>(props.book.rating)
     const [hoveredRate, setHoveredRate] = useState<null|number>(null)
-    const [newLocalRating, setNewLocalRating] = useLocalStorage<object[]>([], 'newRating')
+    const dispatch = useDispatch()
+    // const addRating = useTypeSelector(state => state.history.addRating)
+
 
     function newRating(star:number) {
         if (selectedRate === star){
@@ -53,10 +56,10 @@ const Rating: FC<IRatingProps> = (props) => {
         }
         const newBook={
         ...props.book,
-            updateAt: Date.now(),
+            dateChange: Date.now(),
             rating: star,
         }
-        setNewLocalRating([...newLocalRating, newBook])
+        dispatch({type:HistoryActionTypes.CHANGE_RATING, payload: [newBook]})
     }
 
     return (

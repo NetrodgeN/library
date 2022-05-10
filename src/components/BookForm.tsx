@@ -2,14 +2,13 @@ import React, {useState, FC} from 'react';
 import {useDispatch} from "react-redux";
 import {BooksActionTypes} from "../types/book";
 import Input from "./UI/Input/Input";
-import useLocalStorage from "../hooks/useLocalStorage";
+import {HistoryActionTypes} from "../types/history";
 
 interface IBookFormProps{
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const BookForm:FC<IBookFormProps> = ({setModal}) => {
-    const [newLocalBook, setNewLocalBook] = useLocalStorage<object[]>([], 'newBook')
     const [addBook, setAddBook] = useState({title:'',  author:{lastName:'', firstName:''}});
     const dispatch = useDispatch()
 
@@ -18,10 +17,11 @@ const BookForm:FC<IBookFormProps> = ({setModal}) => {
 
         const newBook={
             ...addBook,
-            id: Date.now()
+            dateChange: Date.now(),
+            id: Date.now(),
         }
         dispatch({type:BooksActionTypes.BOOKS_ADD, payload:  newBook});
-        setNewLocalBook([...newLocalBook, newBook])
+        dispatch({type:HistoryActionTypes.CHANGE_BOOK, payload: [newBook]})
         setAddBook({title:'',  author:{lastName:'', firstName:''}})
         setModal(false)
 

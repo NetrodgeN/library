@@ -12,7 +12,6 @@ export interface IBook{
     image_url: string;
 }
 
-//тип нашего состояния
 export interface BooksState {
     books:any[];
     loading:boolean;
@@ -25,17 +24,21 @@ export enum BooksActionTypes {
     FETCH_BOOKS_ERROR="FETCH_BOOKS_ERROR",
     BOOKS_ADD="BOOKS_ADD",
 }
+
 interface FetchBooksAction{
     type:BooksActionTypes.FETCH_BOOKS;
 }
+
 interface FetchBooksSuccessAction{
     type:BooksActionTypes.FETCH_BOOKS_SUCCESS;
     payload:any[];
 }
+
 interface FetchBooksErrorAction{
     type:BooksActionTypes.FETCH_BOOKS_ERROR;
     payload:string;
 }
+
 interface BooksAddAction{
     type:BooksActionTypes.BOOKS_ADD;
     payload:any[];

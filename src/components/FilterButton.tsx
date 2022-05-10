@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
-import useLocalStorage from "../hooks/useLocalStorage";
+import {useDispatch} from "react-redux";
+import {HistoryActionTypes} from "../types/history";
 
 interface FilterButtonInterface{
     options: IOptions[];
@@ -13,20 +14,19 @@ interface IOptions{
 }
 
 const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
-    const [newLocalFilter, setNewLocalFilter] = useLocalStorage<object[]>([], 'newFilter')
 
-
+    const dispatch = useDispatch();
 
     const handlerChange=(
         event:React.MouseEvent<HTMLInputElement, MouseEvent>,
         onClick:(value: string) => {},
         option:IOptions)=>{
         onClick((event.target as HTMLTextAreaElement).value)
-        const localFilter={
+        const lastFilter={
             title:option.name,
-            updateAt: Date.now()
+            dateChange: Date.now()
         }
-        setNewLocalFilter([...newLocalFilter, localFilter])
+        dispatch({type: HistoryActionTypes.CHANGE_FILTER, payload: [lastFilter]})
     }
 
 

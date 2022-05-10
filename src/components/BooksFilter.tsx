@@ -2,7 +2,8 @@ import React, {FC} from 'react';
 import Input from "./UI/Input/Input";
 import FilterButton from "./FilterButton";
 import useDebounce from "../hooks/useDebounce";
-import useLocalStorage from "../hooks/useLocalStorage";
+import {useDispatch} from "react-redux";
+import {HistoryActionTypes} from "../types/history";
 
 interface IFilter{
     sort:string;
@@ -14,23 +15,20 @@ interface BooksFilterProps{
     setFilter:any;
 }
 
-
 const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
-
-    const [newLocalSearch, setNewLocalSearch] = useLocalStorage<object[]>([], 'newSearch')
-
     const debounce = useDebounce();
+    const dispatch = useDispatch()
+
     function handleInput(e: React.ChangeEvent<HTMLInputElement>){
         e.preventDefault()
         const newSearch ={
             title:e.target.value,
-            updateAt: Date.now()
+            dateChange: Date.now()
         }
         const text = (e.target as HTMLInputElement).value
         debounce(()=>setFilter({...filter, query: text }), 1000)
-        debounce(()=>setNewLocalSearch([...newLocalSearch, newSearch]), 1000)
+        debounce(()=>dispatch({type:HistoryActionTypes.CHANGE_SEARCH, payload: [newSearch]}), 1000)
     }
-
 
     return (
         <div className='filter__browse'>
