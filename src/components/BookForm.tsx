@@ -21,7 +21,7 @@ const BookForm:FC<IBookFormProps> = ({setModal}) => {
             id: Date.now(),
         }
         dispatch({type:BooksActionTypes.BOOKS_ADD, payload:  newBook});
-        dispatch({type:HistoryActionTypes.CHANGE_BOOK, payload: [newBook]})
+        dispatch({type:HistoryActionTypes.CHANGE_HISTORY, payload: newBook})
         setAddBook({title:'',  author:{lastName:'', firstName:''}})
         setModal(false)
 

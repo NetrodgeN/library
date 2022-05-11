@@ -7,7 +7,7 @@ const initialState: BooksState ={
 }
 
 export const booksReducer = (state = initialState, action:BooksAction):BooksState => {
-    //в зависимости от типа экшна будет вызываться тот или иной кейс
+
     switch (action.type){
         case BooksActionTypes.FETCH_BOOKS:
             return {loading:true, error:null, books:[] }

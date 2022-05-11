@@ -9,6 +9,7 @@ import {fetchBook} from "../store/action-creator/book";
 interface IFilter{
     sort:string;
     query:string;
+
 }
 
 const BrowseBooks: React.FC = () => {

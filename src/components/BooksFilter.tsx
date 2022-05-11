@@ -23,11 +23,12 @@ const BooksFilter: FC<BooksFilterProps> = ({filter, setFilter}) => {
         e.preventDefault()
         const newSearch ={
             title:e.target.value,
-            dateChange: Date.now()
+            dateChange: Date.now(),
+            search:true,
         }
         const text = (e.target as HTMLInputElement).value
         debounce(()=>setFilter({...filter, query: text }), 1000)
-        debounce(()=>dispatch({type:HistoryActionTypes.CHANGE_SEARCH, payload: [newSearch]}), 1000)
+        debounce(()=>dispatch({type:HistoryActionTypes.CHANGE_HISTORY, payload: newSearch}), 1000)
     }
 
     return (

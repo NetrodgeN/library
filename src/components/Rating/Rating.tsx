@@ -59,7 +59,7 @@ const Rating: FC<IRatingProps> = (props) => {
             dateChange: Date.now(),
             rating: star,
         }
-        dispatch({type:HistoryActionTypes.CHANGE_RATING, payload: [newBook]})
+        dispatch({type:HistoryActionTypes.CHANGE_HISTORY, payload: newBook})
     }
 
     return (

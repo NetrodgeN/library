@@ -24,9 +24,10 @@ const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
         onClick((event.target as HTMLTextAreaElement).value)
         const lastFilter={
             title:option.name,
-            dateChange: Date.now()
+            dateChange: Date.now(),
+            filter:true,
         }
-        dispatch({type: HistoryActionTypes.CHANGE_FILTER, payload: [lastFilter]})
+        dispatch({type: HistoryActionTypes.CHANGE_HISTORY, payload: lastFilter})
     }
 
 
