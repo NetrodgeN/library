@@ -1,13 +1,14 @@
 import {useState} from "react";
 
 const UseDebounce = () => {
-    const [typingTimeout, setTypingTimeout]=useState<number|NodeJS.Timeout>(0)
-    function debounce(func:Function, wait:number){
+    const [typingTimeout, setTypingTimeout] = useState<number | NodeJS.Timeout>(0);
+
+    function debounce(func: Function, wait: number) {
         clearTimeout(Number(typingTimeout));
-        const timeout = setTimeout(()=>{
+        const timeout = setTimeout(() => {
             func();
-        }, wait)
-        setTypingTimeout(timeout)
+        }, wait);
+        setTypingTimeout(timeout);
     }
     return debounce;
 };

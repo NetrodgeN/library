@@ -14,7 +14,6 @@ const Header:React.FC = () => {
                     <div className='avatar__wrapper'>
                         {/*<img src="" alt=""/>*/}
                     </div>
-
                     <p className="username__header">John Doe</p>
                     <p>&#9660;</p>
                 </div>

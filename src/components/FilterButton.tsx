@@ -13,30 +13,29 @@ interface IOptions{
     name: string;
 }
 
-const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
+const FilterButton: FC<FilterButtonInterface> = ({options, onClick}) => {
 
     const dispatch = useDispatch();
 
-    const handlerChange=(
-        event:React.MouseEvent<HTMLInputElement, MouseEvent>,
-        onClick:(value: string) => {},
-        option:IOptions)=>{
-        onClick((event.target as HTMLTextAreaElement).value)
-        const lastFilter={
-            title:option.name,
+    const handlerChange = (
+        event: React.MouseEvent<HTMLInputElement, MouseEvent>,
+        onClick: (value: string) => {},
+        option: IOptions) => {
+        onClick((event.target as HTMLTextAreaElement).value);
+        const lastFilter = {
+            title: option.name,
             dateChange: Date.now(),
-            filter:true,
+            filter: true,
         }
         dispatch({type: HistoryActionTypes.CHANGE_HISTORY, payload: lastFilter})
-    }
-
+    };
 
 
     return (
         <div className='buttons__container'>
-            {options.map(option=>
+            {options.map(option =>
                 <div className={'filter__btn'}
-                key={option.value}>
+                     key={option.value}>
                     <input
                         defaultChecked={option.active}
                         className={'filter__input'}
@@ -46,8 +45,8 @@ const FilterButton: FC <FilterButtonInterface> = ({options , onClick}) => {
                         value={option.value}
                         onClick={event =>
                             handlerChange(event, onClick, option)
-                    }
-                   />
+                        }
+                    />
                     <label htmlFor={option.value}
                     >
                         <span className='filter__name'>{option.name}</span>

@@ -2,15 +2,12 @@ import React from 'react';
 import timeConversion from "./timeConversion";
 import {IHistory} from "../../types/history";
 
-
-
 interface IHistoryProps {
    element: IHistory
-
 }
 
 const HistoryBlock:React.FC<IHistoryProps> = ({element}) => {
-    let now = Date.now();
+    const now = Date.now();
 
     if( element.author === undefined && element.search )
         return (
@@ -41,6 +38,7 @@ const HistoryBlock:React.FC<IHistoryProps> = ({element}) => {
                 </div>
             </div>
         )
+
     if(element.author === undefined && element.filter)
         return ( <div className={'history__element'}>
                 <i className="fa-regular fa-clock icon__block"/>

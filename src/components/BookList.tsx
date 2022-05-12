@@ -13,11 +13,9 @@ const BookList: FC<BookListProps> = ({sortedAndSearchedBooks}) => {
     const {loading, error} = useTypeSelector(state => state.book)
     const dispatch = useDispatch()
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchBook())
-    },[])
-
-
+    }, [])
 
     return (
         <div className={"books__container"}>

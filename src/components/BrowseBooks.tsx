@@ -9,48 +9,43 @@ import {fetchBook} from "../store/action-creator/book";
 interface IFilter{
     sort:string;
     query:string;
-
 }
 
 const BrowseBooks: React.FC = () => {
-
-    const {books} = useTypeSelector(state => state.book)
-    const [filter, setFilter] = useState<IFilter>({sort:'', query:''})
-
+    const {books} = useTypeSelector(state => state.book);
+    const [filter, setFilter] = useState<IFilter>({sort: '', query: ''});
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchBook())
     }, []);
-
 //сортировка по ..
-    const sortedBooks = useMemo(()=>{
-    if(filter.sort === 'rating' || filter.sort === 'createdAt' || filter.sort === 'updatedAt') {
-        return [...books].sort((a, b) => b[filter.sort] - a[filter.sort])
-    } else if( filter.sort === 'cost') {
-        return [...books].filter(a => a[filter.sort] === 0)
-    }
+    const sortedBooks = useMemo(() => {
+        if (filter.sort === 'rating' || filter.sort === 'createdAt' || filter.sort === 'updatedAt') {
+            return [...books].sort((a, b) => b[filter.sort] - a[filter.sort]);
+        } else if (filter.sort === 'cost') {
+            return [...books].filter(a => a[filter.sort] === 0);
+        }
         return books;
-    },[filter.sort, books])
+    }, [filter.sort, books])
 //фильтрация и поиск
-    const sortedAndSearchedBooks = useMemo(()=>{
+    const sortedAndSearchedBooks = useMemo(() => {
         return sortedBooks.filter(book =>
             book.title.toLowerCase().includes(filter.query.toLowerCase()) ||
             book.author.lastName.toLowerCase().includes(filter.query.toLowerCase()) ||
-            book.author.firstName.toLowerCase().includes(filter.query.toLowerCase()) )
-    },[filter.query, sortedBooks])
+            book.author.firstName.toLowerCase().includes(filter.query.toLowerCase()));
+    }, [filter.query, sortedBooks]);
 
     return (
         <div className='container'>
             <Column/>
-
             <div className="container__browse">
                 <div className='title__container'>
                     <h1 className='title'>Browse Available Books</h1>
                 </div>
                 <BooksFilter filter={filter} setFilter={setFilter}/>
                 <BookList
-                  sortedAndSearchedBooks={sortedAndSearchedBooks}
+                    sortedAndSearchedBooks={sortedAndSearchedBooks}
                 />
             </div>
         </div>

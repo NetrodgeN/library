@@ -8,8 +8,8 @@ interface IModalProps{
 }
 
 const Modal:FC<IModalProps>  = ({children, visible, setVisible}) => {
-
     const rootClasses = [classes.modal]
+
     if (visible){
         rootClasses.push(classes.active);
     }

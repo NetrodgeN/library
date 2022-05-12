@@ -1,36 +1,7 @@
 import React, {useState, FC} from 'react';
-import starImg from './star.png'
 import {useDispatch} from "react-redux";
 import {HistoryActionTypes} from "../../types/history";
-
-interface IstarProps{
-    star:number;
-    rating: number|null;
-    onMouseEnter: React.Dispatch<React.SetStateAction<null|number>>;
-    onMouseLeave: React.Dispatch<React.SetStateAction<null|number>>;
-    onClick: (e: number) => void;
-}
-
-const Star: FC<IstarProps> = ({star, rating, onMouseEnter, onMouseLeave, onClick}) => {
-    let styleClass = "star-rating-blank";
-    if (rating && rating >= star) {
-        styleClass = "star-rating-filled";
-    }
-    return (
-        <div className='star'
-             onMouseEnter={()=> onMouseEnter(star)}
-             onMouseLeave={()=> onMouseLeave(0)}
-             onClick={()=> onClick(star)}
-        >
-            <img
-                className={styleClass}
-                src={starImg}
-                alt="star"
-            />
-        </div>
-    );
-};
-
+import Star from "./Start";
 
 interface IRatingProps{
     book:{
@@ -45,8 +16,6 @@ const Rating: FC<IRatingProps> = (props) => {
     const [selectedRate, setSelectedRate] = useState<null|number>(props.book.rating)
     const [hoveredRate, setHoveredRate] = useState<null|number>(null)
     const dispatch = useDispatch()
-    // const addRating = useTypeSelector(state => state.history.addRating)
-
 
     function newRating(star:number) {
         if (selectedRate === star){

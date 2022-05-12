@@ -5,7 +5,7 @@ const Footer:React.FC  = () => {
         <footer>
             <div className="wrapper footer__wrapper">
                 <button className={'button__footer question'}><i className="fa-solid fa-circle-question"/></button>
-                <button className={'button__footer '}><i className="fa-solid fa-gear"/> </button>
+                <button className={'button__footer '}><i className="fa-solid fa-gear"/></button>
 
             </div>
         </footer>
