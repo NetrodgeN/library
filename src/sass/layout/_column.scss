@@ -27,7 +27,11 @@
   color: $color-white;
   cursor: pointer;
     @extend %font-bold;
-    @include font(1.4rem, 700, 0, bold)
+    @include font(1.4rem, 700, 0, bold);
+  &:disabled{
+    background: $color-main-navigate;
+    cursor: not-allowed;
+  }
 }
 
 .main__nav{

@@ -70,6 +70,16 @@ p {
   display: flex;
 }
 
+.input__error {
+  color: #e64c66;
+  font-size: 1.3rem;
+  margin-bottom: -25px;
+}
+
+.addBook__form input {
+  margin-top: 15px;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: flex-end;
@@ -153,6 +163,10 @@ p {
   font-weight: 700;
   line-height: 0;
   font-style: bold;
+}
+.add__btn:disabled {
+  background: #78829d;
+  cursor: not-allowed;
 }
 
 .main__nav__btns {
