@@ -4,15 +4,18 @@
   height: 44px;
   background: $color-header;
 }
+
 .header__navigation{
   display: flex;
   align-items: center;
 }
+
 .header__list{
   display: flex;
   margin: 0;
   color: $color-white;
 }
+
 .navigation__link{
   font-size: 1.3rem;
   padding-right: 25px;
@@ -23,7 +26,6 @@
     color:$color-header-point;
   }
 }
-
 
 .user__header{
   display: flex;
@@ -44,5 +46,4 @@
   width: 28px;
   height: 28px;
   background-color:$color-activity;
-
 }

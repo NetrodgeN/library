@@ -1,12 +1,13 @@
-.column{
+.column {
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 900px ;
+  height: 900px;
   background: #1f2635;
   color: #6c758f;
 }
-.add__btn__container{
+
+.add__btn__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,52 +16,50 @@
   border-bottom: 6px solid #19202e;
 }
 
-.add__btn{
+.add__btn {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 160px;
   height: 44px;
-  background:$color-btn-add-book ;
+  background: $color-btn-add-book;
   border: none;
   border-radius: 3px;
   color: $color-white;
   cursor: pointer;
-    @extend %font-bold;
-    @include font(1.4rem, 700, 0, bold);
-  &:disabled{
+  @extend %font-bold;
+  @include font(1.4rem, 700, 0, bold);
+  &:disabled {
     background: $color-main-navigate;
     cursor: not-allowed;
   }
 }
 
-.main__nav{
-
-}
-.main__nav__btns{
-  margin:0;
+.main__nav__btns {
+  margin: 0;
   height: 240px;
   padding: 0;
   border-bottom: 6px solid #19202e;
 
 }
-.nav__title{
+
+.nav__title {
   display: flex;
   align-items: center;
   gap: 10px;
   list-style-type: none;
   font-size: 1.3rem;
-  color:$color-main-navigate;
+  color: $color-main-navigate;
   height: 38px;
   padding-left: 20px;
-  &:active{
+
+  &:active {
     color: $color-white;
     background: $color-activity;
   }
 }
 
-
-.categories{
+.categories {
   margin: 14px 0;
   display: flex;
   justify-content: center;
@@ -68,42 +67,52 @@
   height: 182px;
   border-bottom: 6px solid #19202e;
   font-size: 1.3rem;
+
   .cat__title {
     height: 36px;
-    &::marker{
+
+    &::marker {
       font-size: 2.1rem;
     }
-  }  .must_read::marker{
-  color: $color-must-read;
   }
 
-  .best_of_list::marker{
-  color:$color-best-of-list
+  .must_read::marker {
+    color: $color-must-read;
   }
-  .classic_novels::marker{
-  color:$color-classic-novel;
+
+  .best_of_list::marker {
+    color: $color-best-of-list
   }
-  .non_fiction::marker{
-  color:$color-non-fiction;
+
+  .classic_novels::marker {
+    color: $color-classic-novel;
+  }
+
+  .non_fiction::marker {
+    color: $color-non-fiction;
   }
 }
 
-.history_element__container{
+.history_element__container {
   padding-top: 10px;
 }
-.history_container{
-  padding:0 20px;
+
+.history_container {
+  padding: 0 20px;
 }
 
-.history{
+.history {
   color: white;
   overflow-y: scroll;
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 20px;
   }
-  &::-webkit-scrollbar-track{
+
+  &::-webkit-scrollbar-track {
     background-color: inherit;
   }
+
   &::-webkit-scrollbar-thumb {
     background: $color-scroll-bar;
     border-radius: 13px;
@@ -112,31 +121,41 @@
 }
 
 
-
-.icon__block{
+.icon__block {
   display: block;
   padding: 10px 10px 0 0;
 }
-.container_history__title{
+
+.container_history__title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.history__element{
+.history__element {
   font-size: 1.2rem;
-  color:$color-history-main;
+  color: $color-history-main;
   display: flex;
   height: 80px;
 }
-.light__color{
-color: $color-history-light;
+
+.light__color {
+  color: $color-history-light;
 }
 
-
-.addBook__form{
+.addBook__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+}
+
+@media (max-width:992px) {
+  .column{
+    display: none;
+    //visibility: hidden;
+    //position: absolute;
+    //z-index: 10;
+}
+
 }

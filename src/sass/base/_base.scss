@@ -2,18 +2,21 @@ html{
   font-size: 10px;
   background: $color-white;
   color: $color-main-text;
-
 }
+
 a{
   text-decoration: none;
   color: $color-header-nav;
 }
+
 h1{
   @include font(2.2rem, normal, normal)
 }
+
 p{
   margin: 0;
 }
+
 .wrapper{
   max-width: 1320px ;
   margin: auto;
@@ -21,6 +24,31 @@ p{
 
 .container{
   display: flex;
-  justify-content: center;
   box-sizing: border-box;
 }
+
+@media (max-width: 1350px) {
+  .wrapper{
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 992px){
+  .wrapper{
+    max-width: 760px;
+  }
+  .container{
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper{
+    max-width: none;
+  }
+  .container{
+    display: block;
+  }
+}
+
+

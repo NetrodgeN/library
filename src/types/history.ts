@@ -1,22 +1,22 @@
-import {IBook} from "./book";
+import { IBook } from './book';
 
-export interface IHistory extends IBook{
-    dateChange:number,
-    filter?: boolean,
-    search?:boolean,
+export interface IHistory extends IBook {
+  dateChange: number;
+  filter?: boolean;
+  search?: boolean;
 }
 
-export interface IHistoryState{
-    history: IHistory[],
+export interface IHistoryState {
+  history: IHistory[];
 }
 
 export enum HistoryActionTypes {
-    CHANGE_HISTORY = "CHANGE_HISTORY",
+  CHANGE_HISTORY = 'CHANGE_HISTORY',
 }
 
 interface ChangeHistoryAction {
-    type: HistoryActionTypes.CHANGE_HISTORY;
-    payload: IHistory,
+  type: HistoryActionTypes.CHANGE_HISTORY;
+  payload: IHistory;
 }
 
-export type HistoryAction = ChangeHistoryAction
+export type HistoryAction = ChangeHistoryAction;

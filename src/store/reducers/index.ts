@@ -1,10 +1,10 @@
-import {combineReducers} from "redux";
-import {booksReducer} from "./booksReducer";
-import {historyReducer} from "./historyReducer";
+import { combineReducers } from 'redux';
+import { booksReducer } from './booksReducer';
+import { historyReducer } from './historyReducer';
 
 export const rootReducer = combineReducers({
-    book: booksReducer,
-    history: historyReducer
-})
+  book: booksReducer,
+  history: historyReducer,
+});
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;

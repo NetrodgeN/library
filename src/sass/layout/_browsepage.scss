@@ -1,19 +1,22 @@
-.container__browse{
+.container__browse {
   display: flex;
   flex-direction: column
 }
-.title__container{
+
+.title__container {
   display: flex;
   align-items: center;
   height: 70px;
   background: #eef1f7;
   border-bottom: 1px solid #dadfea;
 }
-.title{
+
+.title {
   padding-left: 20px;
-  margin:0;
+  margin: 0;
 }
-.filter__browse{
+
+.filter__browse {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -24,17 +27,20 @@
   border-bottom: 1px solid #dadfea;
 }
 
-.buttons__container{
+.buttons__container {
   display: flex;
   padding-left: 20px;
 }
-.filter__btn{
+
+.filter__btn {
   padding-right: 24px;
 }
-.filter__input{
+
+.filter__input {
   appearance: none;
-  &:checked{
-    & + label{
+
+  &:checked {
+    & + label {
       background: $color-input-cheked;
       color: $color-white;
       padding: 4px 10px;
@@ -42,8 +48,8 @@
   }
 }
 
-.filter__name{
-  font-size:1.2rem;
+.filter__name {
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
@@ -55,13 +61,13 @@ label {
   background: inherit;
 }
 
-.container__input{
+.container__input {
   padding-right: 20px;
-  position:relative;
+  position: relative;
 }
 
-.search__loupe{
-  position:absolute;
+.search__loupe {
+  position: absolute;
   height: 16px;
   width: 16px;
   background: inherit;
@@ -74,21 +80,22 @@ label {
   fill: $color-input-text;
 }
 
-
-
-
-.books__container{
+.books__container {
   display: flex;
   width: 1120px;
   height: 776px;
   flex-wrap: wrap;
+  justify-content: space-around;
   overflow-y: scroll;
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 20px;
   }
-  &::-webkit-scrollbar-track{
+
+  &::-webkit-scrollbar-track {
     background-color: inherit;
   }
+
   &::-webkit-scrollbar-thumb {
     height: 350px;
     background: $color-scroll-bar;
@@ -96,24 +103,57 @@ label {
     border: 7px solid $color-white;
   }
 }
-.book__title{
+
+.book__title {
   font-size: 1.6rem;
   margin-top: 9px;
-  color:$color-book-name;
+  color: $color-book-name;
 }
-.book__author{
+
+.book__author {
   font-size: 1.2rem;
   margin-top: 5px;
-  color:$color-author-name;
+  color: $color-author-name;
 }
-.book__card{
+
+.book__card {
   width: 200px;
   height: 350px;
   padding: 30px 0 0 20px
 }
 
-.book__cover{
+.book__cover {
   width: 200px;
   height: 275px;
 }
 
+@media (max-width: 1350px) {
+  .books__container {
+    width: 770px;
+  }
+
+  .filter__btn {
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 757px) {
+  .books__container {
+    width: auto;
+  }
+
+  .filter__browse {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 74px;
+  }
+
+  .container__input input{
+    width: 309px;
+  }
+
+  .container__input{
+    padding-left: 20px;
+  }
+}

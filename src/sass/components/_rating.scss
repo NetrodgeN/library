@@ -1,9 +1,8 @@
-
 .rating{
   display: flex;
   align-items: flex-end;
-
 }
+
 .rating__body{
   height: 20px;
   display: flex;
@@ -14,12 +13,12 @@
   .stars{
     margin-bottom: 10px;
     display: flex;
+
     img{
       display: block;
       margin: -1px;
       cursor: pointer;
       background: $color-white;
-
       transition: color 0.5s;
       &.star-rating-filled {
         background: $color-star;
@@ -27,15 +26,10 @@
       &.star-rating-blank {
         background: $color-white;
       }
-
     }
   }
 }
 
-
-
-
-
-.flex-container {
+.flex-container{
   display: flex;
 }
