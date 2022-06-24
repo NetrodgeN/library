@@ -52,6 +52,7 @@ p {
 @media (max-width: 767px) {
   .wrapper {
     max-width: none;
+    margin: 0;
   }
 
   .container {
