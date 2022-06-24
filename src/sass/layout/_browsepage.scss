@@ -25,6 +25,12 @@
   background: #eef1f7;
   border-top: 1px solid $color-white;
   border-bottom: 1px solid #dadfea;
+  @include media-tablet{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 74px;
+  }
 }
 
 .buttons__container {
@@ -34,6 +40,9 @@
 
 .filter__btn {
   padding-right: 24px;
+  @include media-laptop{
+    padding-right: 12px;
+  }
 }
 
 .filter__input {
@@ -64,6 +73,10 @@ label {
 .container__input {
   padding-right: 20px;
   position: relative;
+
+  @include media-tablet{
+      padding-left: 20px;
+  }
 }
 
 .search__loupe {
@@ -102,6 +115,14 @@ label {
     border-radius: 13px;
     border: 7px solid $color-white;
   }
+
+  @include media-laptop{
+    width: 770px;
+  }
+
+  @include media-tablet{
+    width: auto;
+  }
 }
 
 .book__title {
@@ -127,33 +148,9 @@ label {
   height: 275px;
 }
 
-@media (max-width: 1350px) {
-  .books__container {
-    width: 770px;
-  }
-
-  .filter__btn {
-    padding-right: 12px;
-  }
-}
 
 @media (max-width: 757px) {
-  .books__container {
-    width: auto;
-  }
-
-  .filter__browse {
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 74px;
-  }
-
   .container__input input{
     width: 309px;
-  }
-
-  .container__input{
-    padding-left: 20px;
   }
 }
